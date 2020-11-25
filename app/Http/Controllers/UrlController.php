@@ -28,8 +28,8 @@ class UrlController extends Controller
 
     public function store(UrlRequest $request)
     {
-        Url::create($request->all());
-        return response('Created', Response::HTTP_CREATED);
+        $url = Url::create($request->all());
+        return response($url, Response::HTTP_CREATED);
     }
 
     /**
@@ -40,7 +40,8 @@ class UrlController extends Controller
      */
     public function show(Url $url)
     {
-        return $url;
+        $url->increment('visits');
+        return redirect($url->original_url);
     }
 
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 
 class Url extends Model
@@ -16,11 +17,16 @@ class Url extends Model
         parent::boot();
 
         static::creating(function ($url) {
-            $url->shorten_url = Str::random();
+            $url->shorten_url = Str::random(7);
         });
     }
     public function getRouteKeyName()
     {
         return 'shorten_url';
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->diffForHumans();
     }
 }
