@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome');
 
 //{url} is for id 
-Route::get('{url}', [UrlController::class, 'show']);
+Route::get('u/{url}', [UrlController::class, 'show']);
+Route::view('{url}', 'welcome');

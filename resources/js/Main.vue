@@ -1,9 +1,10 @@
 <template>
 <div>
-    <bridge-notify/>
     <app-header/>
     <div class="min-h-screen">
-        <Index/>
+        <router-view></router-view>
+
+        <!-- <Index/> -->
     </div>
     <app-footer/>
 </div>
@@ -12,9 +13,9 @@
 <script>
 import AppHeader from './components/layouts/Header';
 import AppFooter from './components/layouts/Footer';
-import Index from './pages/index'
+// import Index from './pages/index';
 export default {
-    components: {AppHeader,AppFooter,Index}
+    components: {AppHeader,AppFooter}
 }
 </script>
 

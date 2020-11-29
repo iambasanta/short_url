@@ -30,6 +30,7 @@ class UrlController extends Controller
     {
         $url = Url::create($request->all());
         return response($url, Response::HTTP_CREATED);
+        return back();
     }
 
     /**
@@ -67,5 +68,6 @@ class UrlController extends Controller
     {
         $url->delete();
         return response('', Response::HTTP_NO_CONTENT);
+        return back();
     }
 }

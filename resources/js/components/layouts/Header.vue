@@ -1,9 +1,9 @@
 <template>
   <nav class="bg-blue-400 p-4 text-white text-xl flex justify-between">
-      <h1>Home</h1>
+      <router-link class="px-3" to="/">Home</router-link>
       <div class="">
-        <a href="" class="px-3">Login</a>
-        <a href="" class="px-3">Register</a>
+        <router-link class="px-3" to="/login">Login</router-link>
+        <router-link class="px-3" to="/register">Register</router-link>
       </div>
   </nav>
 </template>

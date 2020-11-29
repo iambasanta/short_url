@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "bridge-vue-notification": "^1.1.2",
-        "tailwindcss": "^2.0.1"
+        "tailwindcss": "^2.0.1",
+        "vue-router": "^3.4.9",
+        "vue-simple-alert": "^1.1.1"
     }
 }

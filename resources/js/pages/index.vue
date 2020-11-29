@@ -26,7 +26,7 @@
                                 {{item.original_url}}
                             </td>
                             <td class="p-2 border rounded text-smp">
-                                <a :href="item.shorten_url" target="_blank">
+                                <a :href="item.path" target="_blank">
                                     {{item.shorten_url}} 
                                     <i class="fas fa-external-link-alt mx-2"></i>
                                 </a>
@@ -68,7 +68,7 @@ export default {
             .then(res=>{
                 this.original_url = '';
                 this.item.unshift(res.data);
-                this.$notify({message :"Created Successfully !!!"});
+                this.$alert("Created Successfully!");
             })
             .catch((e)=>{
                 this.errors = e.response.data.errors;
@@ -88,7 +88,8 @@ export default {
                 axios
                 .delete(`api/url/${item.shorten_url}`).then(() =>{
                     this.items = this.items.filter(i => i.id != item.id);
-                    this.$$notify({message :"Deleted !!!", type: "Warning"});
+                    this.$alert("Deleted !!!");
+
                 });
 
             }
