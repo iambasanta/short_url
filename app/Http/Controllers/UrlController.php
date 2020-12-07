@@ -17,8 +17,9 @@ class UrlController extends Controller
      */
     public function index()
     {
-        return Url::latest()->get();
+        return auth()->user()->urls;
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -28,7 +29,7 @@ class UrlController extends Controller
 
     public function store(UrlRequest $request)
     {
-        $url = Url::create($request->all());
+        $url = auth()->user()->urls()->create($request->all());
         return response($url, Response::HTTP_CREATED);
         return back();
     }

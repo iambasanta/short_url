@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class Url extends Model
 {
     use HasFactory;
-    protected $fillable = ['original_url', 'shorten_url'];
+    protected $fillable = ['original_url', 'shorten_url', 'user_id'];
     protected $appends = ['path'];
     //boot method overriding for create a method
     protected static function boot()

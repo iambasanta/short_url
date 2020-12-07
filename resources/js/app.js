@@ -3,12 +3,11 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import "tailwindcss/tailwind.css"
+import "tailwindcss/tailwind.css";
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue');
-
+window.Vue = require("vue");
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,19 +20,14 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('main-component', require('./Main.vue').default);
-
+Vue.component("main-component", require("./Main.vue").default);
 
 //for alert messagey
-import VueSimpleAlert from "vue-simple-alert";
-Vue.use(VueSimpleAlert);
+Vue.use(require("bridge-vue-notification"));
 
-
-
-import router from './router';
+import router from "./router";
 
 const app = new Vue({
     router,
-    el: '#app',
-   
+    el: "#app"
 });

@@ -51,6 +51,7 @@
 
 <script>
 export default {
+    middleware: "guest",
     data() {
         return {
             form: {
@@ -62,7 +63,14 @@ export default {
         };
     },
     methods: {
-        submit() {}
+        submit() {
+            axios
+                .post("/register", this.form)
+                .then(res => {
+                    window.location = "/";
+                })
+                .catch(e => console.log(e.response));
+        }
     }
 };
 </script>
