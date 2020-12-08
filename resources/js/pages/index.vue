@@ -38,10 +38,14 @@
                                 {{ item.original_url }}
                             </td>
                             <td class="p-2 border rounded text-smp">
+                                <span
+                                    class="cursor-pointer"
+                                    @click="copyToClipboard(item.path)"
+                                    >{{ item.shorten_url }}</span
+                                >
                                 <a :href="item.path" target="_blank">
-                                    {{ item.shorten_url }}
                                     <i
-                                        class="fas fa-external-link-alt mx-2"
+                                        class="fas fa-external-link-alt mx-2 "
                                     ></i>
                                 </a>
                             </td>
@@ -114,6 +118,9 @@ export default {
                     this.$notify({ message: "Deleted !!!" });
                 });
             }
+        },
+        copyToClipboard(url) {
+            navigator.clipboard.writeText(url);
         }
     }
 };
