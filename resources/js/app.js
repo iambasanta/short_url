@@ -25,6 +25,8 @@ Vue.component("main-component", require("./Main.vue").default);
 //for alert messagey
 Vue.use(require("bridge-vue-notification"));
 
+window.Event = new Vue();
+
 import router from "./router";
 
 const app = new Vue({
