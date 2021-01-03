@@ -11,7 +11,7 @@
                             type="text"
                             v-model="form.email"
                             placeholder="Enter your email."
-                            class="p-2 w-full border rounded shadow"
+                            class="p-2 w-full border rounded shadow focus:outline-none focus:ring focus:border-blue-300 "
                         />
                     </div>
                     <div class="py-2 w-full">
@@ -19,7 +19,7 @@
                             type="password"
                             v-model="form.password"
                             placeholder="*****"
-                            class="p-2 w-full border rounded shadow"
+                            class="p-2 w-full border rounded shadow focus:outline-none focus:ring focus:border-blue-300 "
                         />
                     </div>
                     <div class="py-2 w-full">
@@ -27,14 +27,14 @@
                             type="password"
                             v-model="form.password_confirmation"
                             placeholder="Confirm Your Password"
-                            class="p-2 w-full border rounded shadow"
+                            class="p-2 w-full border rounded shadow focus:outline-none focus:ring focus:border-blue-300 "
                         />
                     </div>
                     <div class="py-2 w-full">
                         <input
                             type="submit"
                             value="Reset Password"
-                            class=" px-2 py-2 text-white border rounded bg-blue-400 w-full"
+                            class=" px-2 py-2 text-white border rounded bg-blue-400 w-full focus:outline-none focus:ring focus:border-blue-300 "
                         />
                     </div>
                 </form>

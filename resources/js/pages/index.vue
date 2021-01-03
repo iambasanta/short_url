@@ -2,7 +2,7 @@
     <div class="flex flex-wrap">
         <div class="w-full p-4">
             <button
-                class="float-right px-1 py-2 bg-green-600 text-white rounded shadow w-28"
+                class="float-right px-1 py-2 bg-green-600 text-white rounded shadow w-28 focus:outline-none focus:ring  "
                 @click="openModal"
             >
                 New
@@ -16,13 +16,13 @@
             />
             <right-bar :data="selectedItem" @deleteItem="destroy" />
         </div>
-        <div>
-            <create-modal
-                :show="modalOpen"
-                @closeModal="modalOpen = false"
-                :items="items.data"
-            />
-        </div>
+
+        <create-modal
+            :show="modalOpen"
+            @closeModal="modalOpen = false"
+            :items="items.data"
+        />
+
         <!-- <div class="text-center mt-5 ">
             <h1 class="text-2xl">Shorten your long URL</h1>
             <form action="" @submit.prevent="submit">

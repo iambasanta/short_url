@@ -46,7 +46,6 @@ class UrlController extends Controller
         return redirect($url->original_url);
     }
 
-
     /**
      * Update the specified resource in storage.
      *

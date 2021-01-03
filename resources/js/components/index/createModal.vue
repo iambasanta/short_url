@@ -4,7 +4,9 @@
             class="absolute border rounded p-1 bg-gray-50 shadow-xl"
             v-if="show"
         >
-            <div class="bg-blue-400 w-full  p-2 flex justify-between">
+            <div
+                class="bg-blue-400 w-full  p-2 flex justify-between border rounded"
+            >
                 <h1 class="text-center text-white font-bold">
                     Shorten your long URL
                 </h1>
@@ -13,7 +15,7 @@
                     @click="close"
                 ></i>
             </div>
-            <div class=" w-full h-full p-4">
+            <div class=" w-full h-full p-4 border rounded">
                 <form @submit.prevent="submit" class="p-4">
                     <div class="m-1">
                         <div class="flex-col">
@@ -22,7 +24,7 @@
                                 name="url"
                                 placeholder="Give a title for your shorten url"
                                 id=""
-                                class="p-2 border-rounded-md shadow-md w-64 "
+                                class="p-2 border-rounded-md shadow-md w-64 focus:outline-none focus:ring focus:border-blue-300 "
                                 v-model="form.title"
                             />
                         </div>
@@ -39,7 +41,7 @@
                                 name="url"
                                 placeholder="Paste your long url"
                                 id=""
-                                class="p-2 border-rounded-md shadow-md w-64 mt-2 "
+                                class="p-2 border-rounded-md shadow-md w-64 mt-2 focus:outline-none focus:ring focus:border-blue-300 "
                                 v-model="form.original_url"
                             />
                         </div>
@@ -51,7 +53,7 @@
                     </div>
                     <i
                         @click="submit"
-                        class="fas fa-paper-plane fa-lg text-blue-400 cursor-pointer px-2 float-right mt-2"
+                        class="fas fa-paper-plane fa-lg text-blue-400 cursor-pointer px-2 float-right mt-2 "
                     ></i>
                 </form>
             </div>

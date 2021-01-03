@@ -3,7 +3,7 @@
         <a
             href=""
             @click.prevent="prev"
-            class=" w-10"
+            class=" w-10 ml-5"
             :class="items.current_page == 1 ? 'opacity-50' : ''"
         >
             <i class="text-gray-600 fas fa-angle-left"></i>
